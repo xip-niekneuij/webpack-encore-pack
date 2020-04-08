@@ -1,0 +1,8 @@
+{
+  "name": "@yproximite/webpack-encore-pack",
+  "version": "0.0.0-development",
+  "description": "A pack of dependencies including Webpack Encore",
+  "repository": "https://github.com/Yproximite/webpack-encore-pack.git",
+  "author": "Hugo Alliaume <kocal@live.fr>",
+  "license": "MIT"
+}
