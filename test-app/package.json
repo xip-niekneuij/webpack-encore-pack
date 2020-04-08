@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "devDependencies": {
+    "@yproximite/webpack-encore-pack": "file:..",
+    "core-js": "^3.0.0",
+    "regenerator-runtime": "^0.13.2",
+    "webpack-notifier": "^1.8.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 1 version",
+    "not dead"
+  ]
+}
