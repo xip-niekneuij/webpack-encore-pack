@@ -8,7 +8,7 @@
     "build": "encore production --progress"
   },
   "devDependencies": {
-    "@yproximite/webpack-encore-pack": "file:..",
+    "@yproximite/webpack-encore-pack": "link:..",
     "core-js": "^3.0.0",
     "html-webpack-plugin": "^4.0.4",
     "regenerator-runtime": "^0.13.2",
