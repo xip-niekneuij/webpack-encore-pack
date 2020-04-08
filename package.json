@@ -9,8 +9,10 @@
     "package.json"
   ],
   "scripts": {
+    "test-app:install": "cd test-app && yarn:install",
     "test-app:dev": "cd test-app && yarn dev",
-    "test": "yarn test-app:dev && ava"
+    "start-server": "http-server test-app/public/ -p 8111 --silent",
+    "test": "yarn test-app:dev && start-server-and-test start-server 8111 jest"
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.3",
@@ -20,6 +22,10 @@
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {
-    "ava": "^3.6.0"
+    "http-server": "^0.12.1",
+    "jest": "^25.3.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1",
+    "start-server-and-test": "^1.10.11"
   }
 }

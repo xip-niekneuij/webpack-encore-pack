@@ -10,6 +10,7 @@
   "devDependencies": {
     "@yproximite/webpack-encore-pack": "file:..",
     "core-js": "^3.0.0",
+    "html-webpack-plugin": "^4.0.4",
     "regenerator-runtime": "^0.13.2",
     "webpack-notifier": "^1.8.0"
   },

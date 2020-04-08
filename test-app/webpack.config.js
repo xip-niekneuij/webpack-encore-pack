@@ -1,4 +1,5 @@
 var Encore = require('@symfony/webpack-encore');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -58,6 +59,10 @@ Encore
 
   // enables PostCSS support
   .enablePostCssLoader()
+
+  .addPlugin(new HtmlWebpackPlugin({
+    filename: '../index.html' // generate file in public directory
+  }))
 ;
 
 module.exports = Encore.getWebpackConfig();

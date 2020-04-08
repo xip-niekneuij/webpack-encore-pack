@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests files should be built 1`] = `
+"{
+  \\"entrypoints\\": {
+    \\"app\\": {
+      \\"js\\": [
+        \\"/build/runtime.js\\",
+        \\"/build/app.js\\"
+      ],
+      \\"css\\": [
+        \\"/build/app.css\\"
+      ]
+    }
+  }
+}"
+`;
