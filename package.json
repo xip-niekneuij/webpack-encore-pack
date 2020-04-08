@@ -5,12 +5,21 @@
   "repository": "https://github.com/Yproximite/webpack-encore-pack.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
-  "files": ["package.json"],
+  "files": [
+    "package.json"
+  ],
+  "scripts": {
+    "test-app:dev": "cd test-app && yarn dev",
+    "test": "yarn test-app:dev && ava"
+  },
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.3",
     "autoprefixer": "^9.7.6",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {
+    "ava": "^3.6.0"
   }
 }
