@@ -5,6 +5,7 @@
   "repository": "https://github.com/Yproximite/webpack-encore-pack.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
+  "files": ["package.json"],
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.3",
     "autoprefixer": "^9.7.6",
