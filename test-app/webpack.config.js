@@ -55,7 +55,9 @@ Encore
   })
 
   // enables Sass/SCSS support
-  .enableSassLoader()
+  .enableSassLoader(options => {
+    options.implementation = require('sass')
+  })
 
   // enables PostCSS support
   .enablePostCssLoader()

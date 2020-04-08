@@ -9,7 +9,7 @@
     "package.json"
   ],
   "scripts": {
-    "test-app:install": "cd test-app && yarn:install",
+    "test-app:install": "cd test-app && yarn install",
     "test-app:dev": "cd test-app && yarn dev",
     "start-server": "http-server test-app/public/ -p 8111 --silent",
     "test": "yarn test-app:dev && start-server-and-test start-server 8111 jest"
@@ -19,7 +19,7 @@
     "autoprefixer": "^9.7.6",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.3",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^7.3.1"
   },
   "devDependencies": {
     "http-server": "^0.12.1",
