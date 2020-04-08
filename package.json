@@ -4,5 +4,12 @@
   "description": "A pack of dependencies including Webpack Encore",
   "repository": "https://github.com/Yproximite/webpack-encore-pack.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.28.3",
+    "autoprefixer": "^9.7.6",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2"
+  }
 }
