@@ -17,21 +17,21 @@ jobs:
                 node-version: [10.x, 12.x, 13.x]
 
         steps:
-            - uses: actions/checkout@v1
+            -   uses: actions/checkout@v1
 
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  registry-url: 'https://npm.pkg.github.com'
-                  scope: '@yproximite'
-                  always-auth: true
+            -   name: Use Node.js ${{ matrix.node-version }}
+                uses: actions/setup-node@v1
+                with:
+                    node-version: ${{ matrix.node-version }}
+                    registry-url: 'https://npm.pkg.github.com'
+                    scope: '@yproximite'
+                    always-auth: true
 
-          -   name: set NODE_AUTH_TOKEN environment variable
-              run: echo "::set-env name=NODE_AUTH_TOKEN::${{ secrets.GITHUB_TOKEN }}"
+            -   name: set NODE_AUTH_TOKEN environment variable
+                run: echo "::set-env name=NODE_AUTH_TOKEN::${{ secrets.GITHUB_TOKEN }}"
 
-            - run: yarn install --frozen-lockfile
+            -   run: yarn install --frozen-lockfile
 
-            - run: yarn test-app:install --frozen-lockfile
+            -   run: yarn test-app:install --frozen-lockfile
 
-            - run: yarn test
+            -   run: yarn test
