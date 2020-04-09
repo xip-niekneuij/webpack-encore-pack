@@ -1,0 +1,33 @@
+name: Release
+
+on:
+    push:
+        branches:
+            - master
+
+env:
+    CI: true
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Install Node.js
+                uses: actions/setup-node@v1
+                with:
+                    node-version: 12
+                    registry-url: 'https://npm.pkg.github.com'
+                    scope: '@yproximite'
+                    always-auth: true
+
+            -   name: set NODE_AUTH_TOKEN environment variable
+                run: echo "::set-env name=NODE_AUTH_TOKEN::${{ secrets.GITHUB_TOKEN }}"
+
+            -   run: yarn install --frozen-lockfile
+
+            -   run: yarn semantic-release
+                env:
+                    NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }} # npm module
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # github module
