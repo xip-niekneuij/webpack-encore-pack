@@ -19,7 +19,8 @@
     "test-app:install": "cd test-app && yarn install",
     "test-app:dev": "cd test-app && yarn dev",
     "start-server": "http-server test-app/public/ -p 8111 --silent",
-    "test": "yarn test-app:dev && start-server-and-test start-server 8111 jest"
+    "test": "yarn test-app:dev && start-server-and-test start-server 8111 jest",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.3",
@@ -29,10 +30,12 @@
     "sass-loader": "^7.3.1"
   },
   "devDependencies": {
+    "@kocal/semantic-release-preset": "^2.0.1",
     "http-server": "^0.12.1",
     "jest": "^25.3.0",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1",
+    "semantic-release": "^17.0.4",
     "start-server-and-test": "^1.10.11"
   }
 }
