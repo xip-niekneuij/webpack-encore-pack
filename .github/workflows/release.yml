@@ -1,28 +1,23 @@
-name: Node CI
+name: Release
 
 on:
-    pull_request:
+    push:
         branches:
-            - '*'
+            - master
 
 env:
     CI: true
 
 jobs:
-    build:
+    release:
         runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [10.x, 12.x, 13.x]
-
         steps:
-            -   uses: actions/checkout@v1
+            -   uses: actions/checkout@v2
 
-            -   name: Use Node.js ${{ matrix.node-version }}
+            -   name: Install Node.js
                 uses: actions/setup-node@v1
                 with:
-                    node-version: ${{ matrix.node-version }}
+                    node-version: 12
                     registry-url: 'https://npm.pkg.github.com'
                     scope: '@yproximite'
                     always-auth: true
@@ -32,6 +27,7 @@ jobs:
 
             -   run: yarn install --frozen-lockfile
 
-            -   run: yarn test-app:install --frozen-lockfile
-
-            -   run: yarn test
+            -   run: yarn semantic-release
+                env:
+                    NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }} # npm module
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # github module
