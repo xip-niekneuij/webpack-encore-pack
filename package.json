@@ -25,6 +25,7 @@
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.3",
     "autoprefixer": "^9.7.6",
+    "postcss": "^7.0.27",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.3",
     "sass-loader": "^7.3.1"
