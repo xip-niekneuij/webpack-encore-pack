@@ -23,7 +23,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@symfony/webpack-encore": "^0.28.3",
+    "@symfony/webpack-encore": "^0.29.1",
     "autoprefixer": "^9.7.6",
     "postcss": "^7.0.27",
     "postcss-loader": "^3.0.0",
