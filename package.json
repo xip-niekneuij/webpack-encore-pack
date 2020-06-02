@@ -28,7 +28,7 @@
     "postcss": "^7.0.27",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.7",
-    "sass-loader": "^7.3.1"
+    "sass-loader": "^8.0.2"
   },
   "devDependencies": {
     "@kocal/semantic-release-preset": "^2.0.3",
