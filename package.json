@@ -31,7 +31,7 @@
     "sass-loader": "^9.0.2"
   },
   "devDependencies": {
-    "@kocal/semantic-release-preset": "^2.0.5",
+    "@kocal/semantic-release-preset": "^2.0.9",
     "jest": "^26.4.2",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1",
