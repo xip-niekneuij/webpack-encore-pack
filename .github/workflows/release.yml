@@ -23,7 +23,7 @@ jobs:
                     always-auth: true
 
             -   name: set NODE_AUTH_TOKEN environment variable
-                run: echo "::set-env name=NODE_AUTH_TOKEN::${{ secrets.GITHUB_TOKEN }}"
+                run: echo NODE_AUTH_TOKEN="${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
             -   run: yarn install --frozen-lockfile
 
