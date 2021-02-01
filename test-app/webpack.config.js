@@ -7,6 +7,9 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+// Manually define `process.env.NODE_ENV`, since Encore does not do it already
+process.env.NODE_ENV = process.env.NODE_ENV || (Encore.isProduction() ? 'production' : 'development');
+
 Encore
 // directory where compiled assets will be stored
   .setOutputPath('public/build/')
@@ -43,10 +46,10 @@ Encore
    * https://symfony.com/doc/current/frontend.html#adding-more-features
    */
   .cleanupOutputBeforeBuild()
-  .enableBuildNotifications()
-  .enableSourceMaps(!Encore.isProduction())
+  .enableSourceMaps()
   // enables hashed filenames (e.g. app.abc123.css)
   .enableVersioning(Encore.isProduction())
+  .disableCssExtraction(Encore.isDevServer())
 
   // enables @babel/preset-env polyfills
   .configureBabelPresetEnv((config) => {
@@ -55,9 +58,7 @@ Encore
   })
 
   // enables Sass/SCSS support
-  .enableSassLoader(options => {
-    options.implementation = require('sass')
-  })
+  .enableSassLoader()
 
   // enables PostCSS support
   .enablePostCssLoader()
