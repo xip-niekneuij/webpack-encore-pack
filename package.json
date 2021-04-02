@@ -36,6 +36,6 @@
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1",
     "semantic-release": "^17.2.3",
-    "start-server-and-test": "^1.11.6"
+    "start-server-and-test": "^1.12.1"
   }
 }
