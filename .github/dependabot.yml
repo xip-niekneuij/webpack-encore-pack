@@ -1,0 +1,49 @@
+version: 2
+registries:
+  npm-registry-npm-fontawesome-com:
+    type: npm-registry
+    url: https://npm.fontawesome.com
+    token: "${{secrets.NPM_REGISTRY_NPM_FONTAWESOME_COM_TOKEN}}"
+  npm-registry-npm-pkg-github-com:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    token: "${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "21:00"
+    timezone: Europe/Paris
+  open-pull-requests-limit: 99
+  reviewers:
+  - Kocal
+  ignore:
+  - dependency-name: postcss
+    versions:
+    - 8.2.2
+    - 8.2.4
+    - 8.2.6
+  - dependency-name: "@symfony/webpack-encore"
+    versions:
+    - 1.1.2
+  - dependency-name: postcss-loader
+    versions:
+    - 5.0.0
+  - dependency-name: semantic-release
+    versions:
+    - 17.3.1
+    - 17.4.0
+  - dependency-name: start-server-and-test
+    versions:
+    - 1.11.7
+  - dependency-name: sass
+    versions:
+    - 1.32.0
+  - dependency-name: node-notifier
+    versions:
+    - 8.0.1
+  registries:
+  - npm-registry-npm-fontawesome-com
+  - npm-registry-npm-pkg-github-com
