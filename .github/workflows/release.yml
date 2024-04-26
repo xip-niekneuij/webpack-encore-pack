@@ -5,9 +5,6 @@ on:
         branches:
             - master
 
-env:
-    CI: true
-
 jobs:
     release:
         runs-on: ubuntu-latest
@@ -17,13 +14,12 @@ jobs:
             -   name: Install Node.js
                 uses: actions/setup-node@v1
                 with:
-                    node-version: 12
                     registry-url: 'https://npm.pkg.github.com'
                     scope: '@yproximite'
                     always-auth: true
 
             -   name: set NODE_AUTH_TOKEN environment variable
-                run: echo "::set-env name=NODE_AUTH_TOKEN::${{ secrets.GITHUB_TOKEN }}"
+                run: echo NODE_AUTH_TOKEN="${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
             -   run: yarn install --frozen-lockfile
 
